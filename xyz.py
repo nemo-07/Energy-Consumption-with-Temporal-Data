@@ -93,7 +93,7 @@ preprocess_output3(y_val3)
 preprocess_output3(y_test3)
 
 # Load the model from the checkpoint
-model = load_model('model5/model_checkpoint.keras')
+model = load_model('model_checkpoint.keras')
 
 # Define the plotting function
 def plot_predictions2(model, X, y, start=0, end=100):
@@ -121,9 +121,9 @@ plot_predictions2(model, X_test3, y_test3)
 def send_message(account_sid, auth_token):
   client = Client(account_sid, auth_token)
   message = client.messages.create(
-  from_='+12073379400',
+  from_='+abc',
   body = 'Caution! Energy consumption levels might exceed the preset threshold. Please check the data and adjust your energy consumption accordingly',
-  to='+6593530714'
+  to='+xyz'
   )
   print(message.sid)
 
@@ -141,8 +141,8 @@ prediction = max(day_predictions)
 print(f'Prediction: {prediction}, Threshold: {threshold}')
 
 
-account_sid = 'AC30f56f865d94f3f68803c39d7e66a5fb'
-auth_token = '59e7629765d568b2d5156933deb93006'
+account_sid = 'id'
+auth_token = 'token'
 
 if (prediction > threshold):
   send_message(account_sid, auth_token)
